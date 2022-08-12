@@ -3,8 +3,8 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput,
 } from 'react-native';
+import { HelperText, TextInput } from 'react-native-paper';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -28,7 +28,7 @@ const LoginForm = ({ credentials, onSubmit }: LoginFormProps): JSX.Element => {
 
   const {
     handleSubmit, control, formState: { errors },
-  } = useForm({
+  } = useForm<CredentialsType>({
     resolver: yupResolver(schema),
     defaultValues: {
       email: credentials?.email,
@@ -41,61 +41,34 @@ const LoginForm = ({ credentials, onSubmit }: LoginFormProps): JSX.Element => {
       <Controller
         control={control}
         render={({ field: { onChange, onBlur, value } }) => (
-          <View style={styles.emailField}>
-            <TextInput
-              style={styles.inputStyle}
-              placeholder={'Enter Email'}
-              placeholderTextColor="#A1A1A1"
-              keyboardType="email-address"
-              autoCapitalize="none"
-              autoCorrect={false}
-              scrollEnabled={true}
-              returnKeyType="done"
-              onBlur={onBlur}
-              onChangeText={(inputValue) => onChange(inputValue)}
-              value={value}
-            />
-          </View>
+          <TextInput
+            label="Email"
+            placeholder={'Enter Email'}
+            onBlur={onBlur}
+            onChangeText={(inputValue) => onChange(inputValue)}
+            value={value}
+            error={errors.email != undefined}
+            maxLength={25}
+          />
         )}
         name="email"
       />
-      <View style={{ alignItems: 'center', width: '100%' }}>
-        <Text style={{ color: 'red', paddingHorizontal: 10 }}>
-          {errors?.email?.message}
-        </Text>
-      </View>
+      <HelperText type="error">{errors?.email?.message}</HelperText>
       <Controller
         control={control}
         render={({ field: { onChange, onBlur, value } }) => (
-          <View style={styles.passwordField}>
-            <TextInput
-              style={styles.inputStyle}
-              placeholder={'Password'}
-              placeholderTextColor="#A1A1A1"
-              autoCapitalize="none"
-              returnKeyType="done"
-              autoCorrect={false}
-              scrollEnabled={true}
-              secureTextEntry={passwordVisible}
-              onBlur={onBlur}
-              onChangeText={(inputValue) => onChange(inputValue)}
-              value={value}
-            />
-            {/* <CustomIcon
-              name={passwordVisible ? 'eye' : 'eye-off'}
-              onPress={() => setPasswordVisible(!passwordVisible)}
-              size={26}
-              color="#9600ff"
-            /> */}
-          </View>
+
+          <TextInput
+            label="Password"
+            secureTextEntry={passwordVisible}
+            onBlur={onBlur}
+            onChangeText={(inputValue) => onChange(inputValue)}
+            value={value}
+          />
         )}
         name="password"
       />
-      <View style={{ alignItems: 'center', width: '100%' }}>
-        <Text style={{ color: 'red', paddingHorizontal: 10 }}>
-          {errors?.password?.message}
-        </Text>
-      </View>
+      <HelperText type="error">{errors.password?.message}</HelperText>
       <PrimaryButton title={"Login"} onPress={handleSubmit(onSubmit)} />
     </View>
   );

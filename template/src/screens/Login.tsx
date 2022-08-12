@@ -1,15 +1,13 @@
 import React from 'react';
 import {
   StyleSheet,
-  View,
-  ImageBackground,
-  Image,
+  View
 } from 'react-native';
+import {Surface} from 'react-native-paper';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { useState } from 'react';
 import { CredentialsType } from 'types';
 import { LoginForm, TextLinkButton, PrimaryText } from 'components';
-import { img_bg } from 'assets'
 
 const Login = () => {
 
@@ -24,40 +22,27 @@ const Login = () => {
   const goToSignup = () => { }
 
   return (
-    <ImageBackground
-      source={img_bg}
-      style={{ width: '100%', height: '100%' }}>
+    <View style={styles.container}>
       <KeyboardAwareScrollView>
-        <View style={styles.main}>
-          <Image
-            style={styles.logo}
-            source={require('../assets/images/logo.png')}
-          />
-          <PrimaryText title="Login to your SOUL account" />
-          <LoginForm
-            credentials={{ email, password }}
-            onSubmit={login}
-          />
-          <TextLinkButton
-            title="Don't have an account? Register here!"
-            onPress={goToSignup} />
-        </View>
+        <PrimaryText title="Login to your account" />
+        <LoginForm
+          credentials={{ email, password }}
+          onSubmit={login}
+        />
+        <TextLinkButton
+          title="Don't have an account? Register here!"
+          onPress={goToSignup} />
       </KeyboardAwareScrollView>
-    </ImageBackground>
+    </View>
   );
 }
 
 export default Login;
 
 const styles = StyleSheet.create({
-  main: {
+  container: {
     flex: 1,
+    marginTop: '50%',
+    marginBottom: '50%'
   },
-  logo: {
-    marginTop: 40,
-    width: 100,
-    height: 130,
-    resizeMode: 'contain',
-    alignSelf: 'center',
-  }
 });

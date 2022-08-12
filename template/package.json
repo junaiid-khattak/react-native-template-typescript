@@ -1,5 +1,5 @@
 {
-  "name": "topshapegym",
+  "name": "doerz_starter",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -19,8 +19,10 @@
     "react-native": "0.68.2",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-linear-gradient": "^2.5.6",
+    "react-native-paper": "^4.12.4",
     "react-native-safe-area-context": "^4.3.1",
     "react-native-screens": "^3.13.1",
+    "react-native-vector-icons": "^9.2.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {

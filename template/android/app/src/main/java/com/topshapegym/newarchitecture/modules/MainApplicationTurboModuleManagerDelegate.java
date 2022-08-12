@@ -1,4 +1,4 @@
-package com.topshapegym.newarchitecture.modules;
+package com.doerz_starter.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

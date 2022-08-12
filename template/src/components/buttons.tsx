@@ -1,11 +1,8 @@
 import React from 'react';
 import {
   StyleSheet,
-  Text,
-  TouchableOpacity,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-
+import { Button, useTheme } from 'react-native-paper';
 interface ButtonProps {
   title: string,
   onPress?: () => void,
@@ -16,26 +13,22 @@ interface ButtonProps {
 
 function PrimaryButton({ title, onPress }: ButtonProps) {
   return (
-    <LinearGradient
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 0 }}
-      colors={['#FE3809', '#FF0640']}
-      style={styles.gradient}>
-      <TouchableOpacity style={styles.buttonStyle} onPress={onPress}>
-        <Text style={styles.buttonText}>{title}</Text>
-      </TouchableOpacity>
-    </LinearGradient>
+    <Button
+      mode="contained"
+      onPress={onPress}>
+      {title}
+    </Button>
   );
 }
 
 const TextLinkButton = ({ title, onPress }: ButtonProps) => {
+  const { colors } = useTheme();
   return (
-    <TouchableOpacity
+    <Button
+      color={colors.backdrop}
       onPress={onPress}>
-      <Text style={styles.textLinkButton}>
-        {title}
-      </Text>
-    </TouchableOpacity>
+      {title}
+    </Button>
   )
 }
 

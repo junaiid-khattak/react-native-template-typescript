@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { Title, useTheme } from 'react-native-paper';
 
 interface TextProps {
     title: string;
@@ -7,31 +7,13 @@ interface TextProps {
 }
 
 const PrimaryText = ({ title, overrideStyles = {} }: TextProps) => {
+    const { fonts } = useTheme();
     return (
-        <Text style={{ ...styles.primary, ...overrideStyles }}>
+        <Title style={{ ...fonts.medium, ...overrideStyles }}>
             {title}
-        </Text>)
-}
-
-const ButtonText = ({ title, overrideStyles = {} }: TextProps) => {
-    return (
-        <Text style={styles.primary}>
-            {title}
-        </Text>)
+        </Title>)
 }
 
 export {
     PrimaryText,
-    ButtonText
 };
-
-const styles = StyleSheet.create({
-    primary: {
-        marginTop: 20,
-        padding: 10,
-        textAlign: 'center',
-        fontSize: 12,
-        color: '#050050',
-        fontFamily: 'Metropolis-SemiBold',
-    }
-});

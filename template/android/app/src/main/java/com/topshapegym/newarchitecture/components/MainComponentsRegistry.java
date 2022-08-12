@@ -1,4 +1,4 @@
-package com.topshapegym.newarchitecture.components;
+package com.doerz_starter.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

@@ -1,4 +1,4 @@
-package com.topshapegym.newarchitecture;
+package com.doerz_starter.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.topshapegym.BuildConfig;
-import com.topshapegym.newarchitecture.components.MainComponentsRegistry;
-import com.topshapegym.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.doerz_starter.BuildConfig;
+import com.doerz_starter.newarchitecture.components.MainComponentsRegistry;
+import com.doerz_starter.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
