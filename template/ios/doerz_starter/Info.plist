@@ -35,7 +35,6 @@
 			</dict>
 		</dict>
 	</dict>
-
 	<key>NSCameraUsageDescription</key>
 	<string>This project would like to use your camera to upload photos</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
@@ -61,5 +60,10 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Poppins-Bold.otf</string>
+		<string>Poppins-Regular.otf</string>
+	</array>
 </dict>
 </plist>
