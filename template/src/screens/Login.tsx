@@ -1,13 +1,14 @@
 import React from 'react';
 import {
   StyleSheet,
-  View
+  View, Text
 } from 'react-native';
 import {Surface} from 'react-native-paper';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { useState } from 'react';
 import { CredentialsType } from 'types';
 import { LoginForm, TextLinkButton, PrimaryText } from 'components';
+import fonts from '../assets/fonts';
 
 const Login = () => {
 
@@ -24,6 +25,8 @@ const Login = () => {
   return (
     <View style={styles.container}>
       <KeyboardAwareScrollView>
+        <Text style={{fontFamily: fonts.Poppins, textAlign:'center', fontSize:20}}>Welcome</Text>
+        <Text style={{fontFamily: fonts.PoppinsBold, textAlign:'center', fontSize:16}}>Getting Started</Text>
         <PrimaryText title="Login to your account" />
         <LoginForm
           credentials={{ email, password }}
