@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "TopshapeGymTests.xctest"
-               BlueprintName = "TopshapeGymTests"
+               BuildableName = "Doerz_StarterTests.xctest"
+               BlueprintName = "Doerz_StarterTests"
                ReferencedContainer = "container:Doerz_Starter.xcodeproj">
             </BuildableReference>
          </TestableReference>

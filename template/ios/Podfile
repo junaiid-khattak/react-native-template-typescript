@@ -20,7 +20,7 @@ target 'Doerz_Starter' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'TopshapeGymTests' do
+  target 'Doerz_StarterTests' do
     inherit! :complete
     # Pods for testing
   end
