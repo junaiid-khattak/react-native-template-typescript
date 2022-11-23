@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
+   <!-- <FileRef
       location = "group:/Users/yousafiqbal/RNProjects/react-native-template-typescript/template/ios/Doerz_Starter.xcodeproj">
-   </FileRef>
+   </FileRef> -->
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <!-- <FileRef
+      location = "group:Doerz_Starter.xcodeproj">
+   </FileRef> -->
 </Workspace>
